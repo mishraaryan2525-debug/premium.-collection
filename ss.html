@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 - Fashion E-Commerce</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ==================== LOGIN PANEL ==================== -->
+    <div id="login-panel" class="panel active">
+        <div class="login-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-card-left">
+                    <div class="login-brand-content">
+                        <h1 class="login-brand-big">MANKHUSH GARMENT<span>
+                          (Fashion adda)</span></h1>
+                        <p class="login-tagline"> chandra tokise(supaul)</p>
+                        <div class="login-features">
+                            <div class="login-feature-item">
+                                <span class="feature-icon">??</span>
+                                <span>premium clothes</span>
+                            </div>
+                            <div class="login-feature-item">
+                                <span class="feature-icon">??</span>
+                                <span>chief and best</span>
+                            </div>
+                            <div class="login-feature-item">
+                                <span class="feature-icon">??</span>
+                                <span>Free pure water </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-card-right">
+                    <div class="login-form-container">
+                        <h2 class="login-title">Welcome Back</h2>
+                        <p class="login-subtitle">Sign in to continue shopping</p>
+                        <div class="login-form">
+                            <div class="input-group">
+                                <label for="username">Username</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">??</span>
+                                    <input type="text" id="username" placeholder="Enter your username" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="password">Password</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">??</span>
+                                    <input type="password" id="password" placeholder="Enter your password">
+                                </div>
+                            </div>
+                            <div id="login-error" class="login-error"></div>
+                            <button id="login-btn" class="btn btn-login" onclick="handleLogin()">
+                                <span>Sign In</span>
+                                <span class="btn-arrow">?</span>
+                            </button>
+                            <div class="login-divider">
+                                <span>Demo Credentials</span>
+                            </div>
+                            <div class="demo-creds">
+                                <div class="cred-item">
+                                    <span class="cred-label">Customer:</span>
+                                    <code>admin | 1234</code>
+                                </div>
+                                <div class="cred-item">
+                                    <span class="cred-label">Admin:</span>
+                                    <code>admin | user panel</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CUSTOMER PANEL ==================== -->
+    <div id="customer-panel" class="panel">
+        <!-- Customer Header -->
+        <header class="customer-header" id="customer-header">
+            <div class="header-container">
+                <a href="#" class="brand-logo" onclick="scrollToTop()">Style<span>Hub</span></a>
+                <nav class="header-nav" id="header-nav">
+                    <a href="#" class="nav-link active" onclick="scrollToTop()">Home</a>
+                    <a href="#" class="nav-link" onclick="scrollToShop()">Shop</a>
+                    <a href="#" class="nav-link" onclick="showAbout()">About</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="cart-btn" onclick="toggleCart()">
+                        <span class="cart-icon">??</span>
+                        <span class="cart-badge" id="cart-badge">0</span>
+                    </button>
+                    <button class="btn btn-logout" onclick="logout('customer')">Logout</button>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#" onclick="scrollToTop(); toggleMobileMenu();">Home</a>
+            <a href="#" onclick="scrollToShop(); toggleMobileMenu();">Shop</a>
+            <a href="#" onclick="showAbout(); toggleMobileMenu();">About</a>
+            <button class="btn btn-logout" onclick="logout('customer')">Logout</button>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero" id="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-particles">
+                <div class="particle p1"></div>
+                <div class="particle p2"></div>
+                <div class="particle p3"></div>
+                <div class="particle p4"></div>
+                <div class="particle p5"></div>
+            </div>
+            <div class="hero-content">
+                <span class="hero-badge">? New Season Collection 2025</span>
+                <h1 class="hero-title">New Season,<br><span>New Style</span></h1>
+                <p class="hero-subtitle">Explore our curated collection of premium fashion for Men, Women, Kids &amp; Accessories. Up to 50% off on select items.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-hero" onclick="scrollToShop()">
+                        Shop Now <span class="btn-arrow">?</span>
+                    </button>
+                    <button class="btn btn-outline btn-hero" onclick="showAbout()">
+                        Learn More
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Products</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Customers</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number">4.8</span>
+                        <span class="stat-label">Rating</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter & Search Bar -->
+        <section class="filter-section" id="shop-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our <span>Collection</span></h2>
+                    <p class="section-subtitle">Handpicked styles for every occasion</p>
+                </div>
+                <div class="filter-bar">
+                    <div class="search-box">
+                        <span class="search-icon">??</span>
+                        <input type="text" id="search-input" placeholder="Search products..." oninput="filterProducts()">
+                    </div>
+                    <div class="filter-controls">
+                        <select id="category-filter" onchange="filterProducts()">
+                            <option value="All">All Categories</option>
+                            <option value="Men">Men</option>
+                            <option value="Women">Women</option>
+                            <option value="Kids">Kids</option>
+                            <option value="Accessories">Accessories</option>
+                        </select>
+                        <select id="sort-filter" onchange="filterProducts()">
+                            <option value="newest">Newest First</option>
+                            <option value="price-lh">Price: Low to High</option>
+                            <option value="price-hl">Price: High to Low</option>
+                            <option value="rating">Top Rated</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid -->
+        <section class="products-section">
+            <div class="container">
+                <div class="product-grid" id="product-grid">
+                    <!-- Products rendered dynamically -->
+                </div>
+                <div class="no-products" id="no-products" style="display:none;">
+                    <span class="no-products-icon">??</span>
+                    <h3>No products found</h3>
+                    <p>Try adjusting your search or filter criteria</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about-section" style="display:none;">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About <span>StyleHub</span></h2>
+                        <p>StyleHub is your premier destination for fashion that speaks volumes. Founded in 2020, we've been curating the finest collections from around the world to bring you style that's both timeless and trendy.</p>
+                        <p>Our mission is to make premium fashion accessible to everyone. With a commitment to quality, sustainability, and customer satisfaction, we ensure every piece in our collection meets the highest standards.</p>
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <span>??</span>
+                                <div>
+                                    <h4>Sustainable Fashion</h4>
+                                    <p>Eco-friendly materials &amp; ethical sourcing</p>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <span>??</span>
+                                <div>
+                                    <h4>Free Shipping</h4>
+                                    <p>On orders above ?999</p>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <span>??</span>
+                                <div>
+                                    <h4>Easy Returns</h4>
+                                    <p>30-day hassle-free returns</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/fashion/500/600" alt="About StyleHub">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Sidebar -->
+        <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+        <div class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h3>Shopping Cart</h3>
+                <button class="cart-close" onclick="toggleCart()">?</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items rendered dynamically -->
+            </div>
+            <div class="cart-empty" id="cart-empty">
+                <span class="cart-empty-icon">??</span>
+                <p>Your cart is empty</p>
+                <button class="btn btn-primary" onclick="toggleCart(); scrollToShop();">Start Shopping</button>
+            </div>
+            <div class="cart-footer" id="cart-footer">
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal">?0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>GST (18%)</span>
+                        <span id="cart-gst">?0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Grand Total</span>
+                        <span id="cart-total">?0</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-checkout" onclick="checkout()">
+                    Checkout <span class="btn-arrow">?</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="customer-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3 class="footer-brand">Style<span>Hub</span></h3>
+                        <p>Your premium fashion destination. Curated collections for the modern lifestyle.</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">??</a>
+                            <a href="#" class="social-icon">??</a>
+                            <a href="#" class="social-icon">??</a>
+                            <a href="#" class="social-icon">??</a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <a href="#">Home</a>
+                        <a href="#">Shop</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Categories</h4>
+                        <a href="#">Men's Fashion</a>
+                        <a href="#">Women's Fashion</a>
+                        <a href="#">Kids' Wear</a>
+                        <a href="#">Accessories</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Us</h4>
+                        <p>?? 123 Fashion adda supaul</p>
+                        <p>?? +91 9798904709</p>
+                        <p>?? aryan242424@gmail.in</p>
+                        <p>?? Mon-Sat: 10AM - 8PM</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 StyleHub. All rights reserved. Made with ?? in India</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ==================== ADMIN PANEL ==================== -->
+    <div id="admin-panel" class="panel">
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-brand">Style<span>Hub</span></h2>
+                <span class="sidebar-subtitle">Admin Panel</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-page="dashboard" onclick="showAdminPage('dashboard', this)">
+                    <span class="sidebar-icon">??</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="products" onclick="showAdminPage('products', this)">
+                    <span class="sidebar-icon">??</span>
+                    <span>Products</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="orders" onclick="showAdminPage('orders', this)">
+                    <span class="sidebar-icon">??</span>
+                    <span>Orders</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="btn btn-logout sidebar-logout" onclick="logout('admin')">
+                    <span>??</span> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Admin Mobile Header -->
+        <div class="admin-mobile-header">
+            <button class="admin-menu-btn" onclick="toggleAdminSidebar()">?</button>
+            <h2 class="sidebar-brand">Style<span>Hub</span></h2>
+            <button class="btn btn-logout" onclick="logout('admin')" style="font-size: 0.8rem; padding: 6px 12px;">Logout</button>
+        </div>
+
+        <!-- Admin Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard Page -->
+            <div class="admin-page active" id="admin-dashboard">
+                <div class="admin-page-header">
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, Admin! Here's your overview.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card stat-card-1">
+                        <div class="stat-card-icon">??</div>
+                        <div class="stat-card-info">
+                            <span class="stat-card-value" id="stat-products">8</span>
+                            <span class="stat-card-label">Total Products</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-card-2">
+                        <div class="stat-card-icon">??</div>
+                        <div class="stat-card-info">
+                            <span class="stat-card-value">?1,24,500</span>
+                            <span class="stat-card-label">Total Sales</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-card-3">
+                        <div class="stat-card-icon">??</div>
+                        <div class="stat-card-info">
+                            <span class="stat-card-value">23</span>
+                            <span class="stat-card-label">Active Orders</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-card-4">
+                        <div class="stat-card-icon">??</div>
+                        <div class="stat-card-info">
+                            <span class="stat-card-value">1,250</span>
+                            <span class="stat-card-label">Customers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="recent-section">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <span class="activity-icon">??</span>
+                            <div class="activity-info">
+                                <p>New order #1234 received</p>
+                                <span>2 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">??</span>
+                            <div class="activity-info">
+                                <p>Product "Classic White Tee" stock updated</p>
+                                <span>15 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">??</span>
+                            <div class="activity-info">
+                                <p>New customer registered</p>
+                                <span>1 hour ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">??</span>
+                            <div class="activity-info">
+                                <p>Payment of ?2,499 received</p>
+                                <span>3 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Page -->
+            <div class="admin-page" id="admin-products">
+                <div class="admin-page-header">
+                    <div>
+                        <h1>Products</h1>
+                        <p>Manage your product inventory</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="openProductModal()">
+                        + Add Product
+                    </button>
+                </div>
+                <div class="admin-table-container">
+                    <table class="admin-table" id="admin-product-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Rating</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-product-tbody">
+                            <!-- Rendered dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Orders Page (Dummy) -->
+            <div class="admin-page" id="admin-orders">
+                <div class="admin-page-header">
+                    <h1>Orders</h1>
+                    <p>Track and manage customer orders</p>
+                </div>
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-1001</td>
+                                <td>Rahul Sharma</td>
+                                <td>?2,499</td>
+                                <td><span class="status-badge status-delivered">Delivered</span></td>
+                                <td>Jan 15, 2025</td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1002</td>
+                                <td>Priya Patel</td>
+                                <td>?1,899</td>
+                                <td><span class="status-badge status-shipped">Shipped</span></td>
+                                <td>Jan 16, 2025</td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1003</td>
+                                <td>Amit Kumar</td>
+                                <td>?3,450</td>
+                                <td><span class="status-badge status-processing">Processing</span></td>
+                                <td>Jan 17, 2025</td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1004</td>
+                                <td>Sneha Reddy</td>
+                                <td>?999</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td>Jan 18, 2025</td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-1005</td>
+                                <td>Vikram Singh</td>
+                                <td>?4,200</td>
+                                <td><span class="status-badge status-delivered">Delivered</span></td>
+                                <td>Jan 19, 2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- Product Modal -->
+        <div class="modal-overlay" id="product-modal-overlay" onclick="closeProductModal()"></div>
+        <div class="modal" id="product-modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Add New Product</h3>
+                <button class="modal-close" onclick="closeProductModal()">?</button>
+            </div>
+            <div class="modal-body">
+                <form id="product-form">
+                    <input type="hidden" id="edit-product-id" value="">
+                    <div class="form-group">
+                        <label for="prod-name">Product Name</label>
+                        <input type="text" id="prod-name" placeholder="Enter product name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prod-category">Category</label>
+                            <select id="prod-category" required>
+                                <option value="">Select Category</option>
+                                <option value="Men">Men</option>
+                                <option value="Women">Women</option>
+                                <option value="Kids">Kids</option>
+                                <option value="Accessories">Accessories</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="prod-price">Price (?)</label>
+                            <input type="number" id="prod-price" placeholder="0" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prod-stock">Stock</label>
+                            <input type="number" id="prod-stock" placeholder="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="prod-rating">Rating (1-5)</label>
+                            <input type="number" id="prod-rating" step="0.1" min="1" max="5" placeholder="4.5" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="prod-image">Image URL</label>
+                        <input type="url" id="prod-image" placeholder="https://example.com/image.jpg" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prod-desc">Description</label>
+                        <textarea id="prod-desc" rows="3" placeholder="Product description..."></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeProductModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="modal-submit-btn">Add Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Admin Sidebar Overlay (mobile) -->
+        <div class="admin-sidebar-overlay" id="admin-sidebar-overlay" onclick="toggleAdminSidebar()"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon" id="toast-icon">?</span>
+        <span class="toast-message" id="toast-message">Item added to cart!</span>
+    </div>
+
+    <!-- Success Modal (Checkout) -->
+    <div class="success-overlay" id="success-overlay" onclick="closeSuccessModal()"></div>
+    <div class="success-modal" id="success-modal">
+        <div class="success-animation">
+            <div class="checkmark-circle">
+                <span class="checkmark">?</span>
+            </div>
+        </div>
+        <h2>Order Placed Successfully!</h2>
+        <p>Thank you for your purchase. Your order will be delivered within 3-5 business days.</p>
+        <button class="btn btn-primary" onclick="closeSuccessModal()">Continue Shopping</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
